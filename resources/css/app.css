@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --theme-color: red;
+}
+
+::selection {
+    background: var(--theme-color);
+    color: white;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.content {
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: rgb(65, 65, 65);
+}
+
+.code-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgb(96, 96, 96);
+}
+
+.theme {
+    color: var(--theme-color);
+}
+
+pre code {
+    font-family: "JetBrains Mono", serif !important;
+    line-height: 2;
+}
+
+.code-sample {
+    font-size: 15px;
+    font-family: "JetBrains Mono", serif;
+    color: rgb(135, 134, 134);
+}
+
+.heading {
+    color: var(--theme-color);
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+}
+
+li::marker {
+    color: var(--theme-color);
+}
+
+.link {
+    @apply transition ease-in-out hover:text-red-500 duration-200;
+}
+
+.heading-primary {
+    @apply text-[4rem] uppercase heading mb-[8rem] tracking-wide [word-spacing:10px];
+}
+
+.heading-secondary {
+    @apply text-[2rem] uppercase heading mb-[1rem] tracking-wide [word-spacing:1px];
+}
+
+.spacer {
+    @apply h-[50px];
+}
+
+ul {
+    margin-left: 25px;
+}
+
+/* Code */
+
+/*
+ Margin and rounding are personal preferences,
+ overflow-x-auto is recommended.
+*/
+pre {
+    @apply rounded overflow-x-auto text-[15px] mb-6;
+}
+
+/*
+ Add some vertical padding and expand the width
+ to fill its container. The horizontal padding
+ comes at the line level so that background
+ colors extend edge to edge.
+*/
+pre code.torchlight {
+    @apply block py-4 min-w-max rounded-md;
+}
+
+/*
+ Horizontal line padding.
+*/
+pre code.torchlight .line {
+    @apply px-4;
+}
+
+/*
+ Push the code away from the line numbers and
+ summary caret indicators.
+*/
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+    @apply mr-4;
+}
+
+/*
+  Blur and dim the lines that don't have the `.line-focus` class,
+  but are within a code block that contains any focus lines.
+*/
+.torchlight.has-focus-lines .line:not(.line-focus) {
+    transition: filter 0.35s, opacity 0.35s;
+    filter: blur(0.095rem);
+    opacity: 0.65;
+}
+
+/*
+  When the code block is hovered, bring all the lines into focus.
+*/
+.torchlight.has-focus-lines:hover .line:not(.line-focus) {
+    filter: blur(0px);
+    opacity: 1;
+}
