@@ -4,15 +4,15 @@
     <h1 class="heading-primary">Static</h1>
 
     <p class="content">In PHP, the static keyword is used to declare properties and methods within a class that belong to the class itself rather than any particular instance of the class.</p>
-    <p class="content">Because static methods are callable without an instance of the object created, the pseudo-variable <span class='code-sample'>$this</span> is not available inside methods declared as static.</p>
-    <p class="content">You can use <span class='code-sample'>self::</span> to access static methods or properties within the same class.</p>
+    <p class="content">Because static methods are callable without an instance of the object created, the pseudo-variable <span class='tick'>$this</span> is not available inside methods declared as static.</p>
+    <p class="content">You can use <span class='tick'>self::</span> to access static methods or properties within the same class.</p>
     <div class="spacer"></div>
 
     <p class="heading-secondary">Properties</p>
     <ul class="list-disc list-outside space-y-2">
         <li>A static property is shared among all instances of a class.</li>
         <li>It belongs to the class itself rather than any specific object.</li>
-        <li>Static properties are accessed using the scope resolution operator <span class='code-sample'>::</span></li>
+        <li>Static properties are accessed using the scope resolution operator <span class='tick'>::</span></li>
     </ul>
     <div class="spacer"></div>
     <div class="spacer"></div>
@@ -21,7 +21,7 @@
     <ul class="list-disc list-outside space-y-2">
         <li>A static method can be called without creating an instance of the class.</li>
         <li>These methods cannot access non-static properties or methods directly, as they are not tied to any specific instance of the class.</li>
-        <li>Like static properties, they are accessed using the scope resolution operator <span class='code-sample'>::</span></li>
+        <li>Like static properties, they are accessed using the scope resolution operator <span class='tick'>::</span></li>
     </ul>
     <div class="spacer"></div>
 
@@ -144,7 +144,7 @@
     <div class="spacer"></div>
 
     <h2 class="heading-secondary">Self vs Static</h2>
-    <p class="content"><span class="code-sample">self</span> refers to the class where the method is defined while
-        <span class="code-sample">static</span> refers to the class that was called, even if the method is inherited.
+    <p class="content"><span class="tick">self</span> refers to the class where the method is defined while
+        <span class="tick">static</span> refers to the class that was called, even if the method is inherited.
         </p>
 @stop

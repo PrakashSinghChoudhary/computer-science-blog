@@ -44,7 +44,7 @@
 
     <h2 class="heading-secondary">Note </h2>
     <ul class="list-disc list-outside space-y-2">
-        <li><span class="code-sample">final</span> ensures that the behavior of a class or method remains unchanged and cannot be modified by inheritance.</li>
+        <li><span class="tick">final</span> ensures that the behavior of a class or method remains unchanged and cannot be modified by inheritance.</li>
         <li>It is often used for security or when a specific implementation must not be altered.</li>
         <li>If you apply final to a class, all its methods are implicitly final as well.</li>
     </ul>

@@ -7,7 +7,7 @@
     <p class="content">For example, when extending a class, the subclass inherits all of the public and protected methods, properties and constants from the parent class. Unless a class overrides those methods, they will retain their original functionality.</p>
     <p class="content">This is useful for defining and abstracting functionality, and permits the implementation of additional functionality in similar objects without the need to reimplement all of the shared functionality.</p>
     <p class="content">The visibility of methods, properties and constants can be relaxed, e.g. a protected method can be marked as public, but they cannot be restricted, e.g. marking a public property as private. An exception are constructors, whose visibility can be restricted, e.g. a public constructor can be marked as private in a child class.</p>
-    <p class="content">If the child class does not define a constructor, it inherits the parent constructor like any other method. If a child class defines a constructor of its own, the parent constructor will be overridden. To call the parent constructor, a call to <span class="code-sample">parent::__construct()</span> must be done from the child constructor</p>
+    <p class="content">If the child class does not define a constructor, it inherits the parent constructor like any other method. If a child class defines a constructor of its own, the parent constructor will be overridden. To call the parent constructor, a call to <span class="tick">parent::__construct()</span> must be done from the child constructor</p>
     <div class="spacer"></div>
 
     <p class="code-text">Basic example of Inheritance</p>
@@ -129,7 +129,7 @@
         </x-torchlight-code>
     </pre>
     <div class="spacer"></div>
-    <p class="content">Using the <span class="code-sample">#[Override]</span> attribute</p>
+    <p class="content">Using the <span class="tick">#[Override]</span> attribute</p>
     <pre>
         <x-torchlight-code language='php'>
         abstract class Parent {

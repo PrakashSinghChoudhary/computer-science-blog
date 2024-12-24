@@ -14,6 +14,7 @@
         <li><a class="link" href="/object-oriented-programming/interface">Interface</a></li>
         <li><a class="link" href="/object-oriented-programming/traits">Traits</a></li>
         <li><a class="link" href="/object-oriented-programming/final">Final</a></li>
+        <li><a class="link" href="/object-oriented-programming/exceptions">Exceptions</a></li>
 
     </ul>
 @stop
