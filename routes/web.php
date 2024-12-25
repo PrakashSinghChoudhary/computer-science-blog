@@ -23,6 +23,7 @@ Route::prefix('object-oriented-programming')->group(function () {
     Route::get('/traits', function () { return view('oop.traits'); });
     Route::get('/final', function () { return view('oop.final'); });
     Route::get('/exceptions', function () { return view('oop.exceptions'); });
+    Route::get('/magic-methods', function () { return view('oop.magic'); });
 });
 
 
