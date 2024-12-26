@@ -169,4 +169,138 @@
     </pre>
     <div class="spacer"></div>
 
+    <p class="code-text">__destruct() is automatically invoked before an object is deleted.</p>
+    <pre>
+        <x-torchlight-code language='php'>
+            class BankAccount
+            {
+
+                public function __construct(
+                    private $accountNumber,
+                    private $balance
+                ) {}
+
+                public function __destruct()
+                {
+                    echo 'Destructor called';
+                }
+            }
+
+
+            $account = new BankAccount('123456789', 100);
+            unset($account);     // Destructor called
+        </x-torchlight-code>
+    </pre>
+    <div class="spacer"></div>
+
+    <p class="code-text">__call() is triggered when invoking an inaccessible instance method.</p>
+    <pre>
+        <x-torchlight-code language='php'>
+            class BankAccount
+            {
+
+                public function __construct(
+                    private $accountNumber,
+                    private $balance
+                ) {}
+
+                private function setBalance($balance)
+                {
+                    $this->balance = $balance;
+                }
+
+                public function __call($name, $array)
+                {
+                    echo($name);              // setBalance
+                    print_r($array);          // [0 => 500]
+                    echo 'Cannot call this method';
+                }
+            }
+
+
+            $account = new BankAccount('123456789', 100);
+            $account->setBalance(500);     // Cannot call this method
+        </x-torchlight-code>
+    </pre>
+    <div class="spacer"></div>
+
+    <p class="code-text">__clone() is called once the cloning is complete.</p>
+    <pre>
+        <x-torchlight-code language='php'>
+            class Manager
+            {
+                public function __construct(public $name)
+                {}
+
+                public function __clone()
+                {
+                    echo 'Cloning is complete.';
+                }
+            }
+
+            $manager_1 = new Manager('Manager 1');
+
+
+            // Wrong way
+            $manager_2 = $manager_1;
+            $manager_2->name = 'Manager 2';
+
+            var_dump($manager_1);    // Manager 2
+            var_dump($manager_2);    // Manager 2
+
+
+            // Correct way
+            $manager_2 = clone $manager_1;      // Cloning is complete.
+            $manager_2->name = 'Manager 2';
+
+            var_dump($manager_1);    // Manager 1
+            var_dump($manager_2);    // Manager 2
+
+
+
+
+            class Manager
+            {
+                public function __construct(public string $name)
+                {}
+            }
+
+            class Department
+            {
+                public function __construct(public string $name, public Manager $manager)
+                {}
+
+                public function __clone()
+                {
+                    $this->manager = clone $this->manager;
+                }
+            }
+
+            $manager_1 = new Manager('Manager 1');
+            $dept_1 = new Department('Department 1', $manager_1);
+            $dept_2 = clone $dept_1;
+            $dept_2->name = 'Department 2';
+            $dept_2->manager->name = 'Manager 2';
+            var_dump($dept_1);  // [ name => Department 1, Manager => [ name => Manager 1 ] ]
+            var_dump($dept_2);  // [ name => Department 2, Manager => [ name => Manager 2 ] ]
+        </x-torchlight-code>
+    </pre>
+    <div class="spacer"></div>
+
+    <p class="code-text">__invoke() is invoked when an object is called as a function.</p>
+    <pre>
+        <x-torchlight-code language='php'>
+            class Multiplication
+            {
+                public function __invoke(float | int $multiplier, float | int $multiplicand): float | int
+                {
+                    return $multiplier * $multiplicand;
+                }
+            }
+
+            $multiplication = new Multiplication();
+            echo $multiplication(5, 6);    // 30
+        </x-torchlight-code>
+    </pre>
+
 @stop
