@@ -16,6 +16,7 @@
         <li><a class="link" href="/object-oriented-programming/final">Final</a></li>
         <li><a class="link" href="/object-oriented-programming/exceptions">Exceptions</a></li>
         <li><a class="link" href="/object-oriented-programming/magic-methods">Magic Methods</a></li>
+        <li><a class="link" href="/object-oriented-programming/namespaces">Namespaces</a></li>
 
     </ul>
 @stop
