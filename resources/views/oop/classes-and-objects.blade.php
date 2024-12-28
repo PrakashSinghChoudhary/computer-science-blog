@@ -17,7 +17,9 @@
     <p class="code-text">Creating a class and an object from that class</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Product { }
+            class Product
+            {
+            }
 
             $product = new Product();
         </x-torchlight-code>
@@ -28,7 +30,8 @@
     <pre>
         <x-torchlight-code language='php'>
             // Add properties to a class
-            class Product {
+            class Product
+            {
                 public $name;                 // null
                 public $price = 0.99;         // 0.99
             }
@@ -49,13 +52,15 @@
     <pre>
         <x-torchlight-code language='php'>
             // Add methods to a class
-            class Product {
+            class Product
+            {
                 public $name;
                 public $price;
 
-                public function priceAsCurrency() { //  [tl! highlight]
-                    return $this->price; //  [tl! highlight]
-                } //  [tl! highlight]
+                public function priceAsCurrency()  //  [tl! highlight:3]
+                {
+                    return $this->price;
+                }
             }
 
 
@@ -66,13 +71,15 @@
 
 
             // Pass arguments to methods
-            class Product {
+            class Product
+            {
                 public $name;
                 public $price;
 
-                public function priceAsCurrency($currency) { //  [tl! highlight]
-                    return $currency . $this->price; //  [tl! highlight]
-                } //  [tl! highlight]
+                public function priceAsCurrency($currency)  //  [tl! highlight:3]
+                {
+                    return $currency . $this->price;
+                }
             }
 
             $product = new Product();

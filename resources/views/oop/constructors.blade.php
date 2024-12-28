@@ -8,11 +8,13 @@
     <p class="code-text">Basic constructor example</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Product {
+            class Product
+            {
                 public $name;
                 public $price;
 
-                public function __construct($name, $price) {
+                public function __construct($name, $price)
+                {
                     $this->name = $name;
                     $this->price = $price;
                 }
@@ -27,7 +29,8 @@
     <pre>
         <x-torchlight-code language='php'>
             // Without promoted properties
-            class CustomerDTO {
+            class CustomerDTO
+            {
                 public string $name;
                 public string $email;
                 public DateTimeImmutable $birth_date;
@@ -45,7 +48,8 @@
 
 
             // With promoted properties
-            class CustomerDTO {
+            class CustomerDTO
+            {
                 public function __construct( //  [tl! highlight:4]
                     public string $name,
                     public string $email,
@@ -59,7 +63,8 @@
     <p class="code-text">Mix and match is possible with promoted properties</p>
     <pre>
         <x-torchlight-code language='php'>
-            class MyClass {
+            class MyClass
+            {
                 public string $b;
 
                 public function __construct(
@@ -104,13 +109,15 @@
     <p class="code-text">Inheritance is allowed</p>
     <pre>
         <x-torchlight-code language='php'>
-            class A {
+            class A
+            {
                 public function __construct(
                     public $a,
                 ) {}
             }
 
-            class B extends A {
+            class B extends A
+            {
                 public function __construct(
                     $a,
                     public $b,

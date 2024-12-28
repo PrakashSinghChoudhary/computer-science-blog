@@ -118,7 +118,8 @@
                     return $this->{$property} = $value;
                 }
 
-                public function __unset($property) {
+                public function __unset($property)
+                {
                     throw new Error($property . ' doesnt exist.');
                 }
             }

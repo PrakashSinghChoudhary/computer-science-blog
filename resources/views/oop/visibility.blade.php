@@ -13,22 +13,26 @@
     <p class="code-text">Example of Visibility</p>
     <pre>
         <x-torchlight-code language='php'>
-            class User {
+            class User
+            {
 
                 public $firstName;
                 public $lastName;
                 protected $isActive;
                 private $password;
 
-                public function getFullName() {
+                public function getFullName()
+                {
                     return "{$this->firstName} {$this->lastName}";
                 }
 
-                protected function setUserInactive() {
+                protected function setUserInactive()
+                {
                     $this->isActive = false;
                 }
 
-                private function changePassword($password) {
+                private function changePassword($password)
+                {
                     $this->password = $password;
                 }
 

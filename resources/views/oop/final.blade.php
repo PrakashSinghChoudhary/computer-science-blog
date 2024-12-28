@@ -9,13 +9,16 @@
     <p class="code-text">When a class is declared as final, it cannot be extended by any other class.</p>
     <pre>
         <x-torchlight-code language='php'>
-            final class BaseClass {
-                public function sayHello() {
+            final class BaseClass
+            {
+                public function sayHello()
+                {
                     echo "Hello from BaseClass";
                 }
             }
 
-            class DerivedClass extends BaseClass {
+            class DerivedClass extends BaseClass
+            {
                 // Error: Cannot inherit from final class
             }
         </x-torchlight-code>
@@ -26,15 +29,19 @@
     <p class="code-text">When a method is declared as final, it cannot be overridden by child classes, but the class itself can still be extended.</p>
     <pre>
         <x-torchlight-code language='php'>
-            class BaseClass {
-                final public function sayHello() {
+            class BaseClass
+            {
+                final public function sayHello()
+                {
                     echo "Hello from BaseClass";
                 }
             }
 
-            class DerivedClass extends BaseClass {
+            class DerivedClass extends BaseClass
+            {
                 // Error: Cannot override final method BaseClass::sayHello()
-                public function sayHello() {
+                public function sayHello()
+                {
                     echo "Hello from DerivedClass";
                 }
             }

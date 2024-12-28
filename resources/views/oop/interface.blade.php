@@ -19,17 +19,21 @@
     <p class="code-text">Example of an Interface</p>
     <pre>
         <x-torchlight-code language='php'>
-            interface MyInterface {
+            interface MyInterface
+            {
                 public function methodOne();
                 public function methodTwo($param);
             }
 
-            class MyClass implements MyInterface {
-                public function methodOne() {
+            class MyClass implements MyInterface
+            {
+                public function methodOne()
+                {
                     echo "Method One implemented.";
                 }
 
-                public function methodTwo($param) {
+                public function methodTwo($param)
+                {
                     echo "Method Two implemented with param: $param";
                 }
             }
@@ -45,20 +49,25 @@
     <p class="code-text">Example with Multiple Interfaces</p>
     <pre>
         <x-torchlight-code language='php'>
-            interface A {
+            interface A
+            {
                 public function foo();
             }
 
-            interface B {
+            interface B
+            {
                 public function bar();
             }
 
-            class MyClass implements A, B {
-                public function foo() {
+            class MyClass implements A, B
+            {
+                public function foo()
+                {
                     echo "Foo implemented.";
                 }
 
-                public function bar() {
+                public function bar()
+                {
                     echo "Bar implemented.";
                 }
             }
@@ -74,27 +83,33 @@
     <pre>
         <x-torchlight-code language='php'>
             // Constants in Interface
-            interface MyInterface {
+            interface MyInterface
+            {
                 const VALUE = "constant value";
             }
             echo MyInterface::VALUE;
 
 
             // Interfaces can extend other interfaces
-            interface ParentInterface {
+            interface ParentInterface
+            {
                 public function parentMethod();
             }
 
-            interface ChildInterface extends ParentInterface {
+            interface ChildInterface extends ParentInterface
+            {
                 public function childMethod();
             }
 
-            class MyClass implements ChildInterface {
-                public function parentMethod() {
+            class MyClass implements ChildInterface
+            {
+                public function parentMethod()
+                {
                     echo "Parent method implemented.";
                 }
 
-                public function childMethod() {
+                public function childMethod()
+                {
                     echo "Child method implemented.";
                 }
             }
@@ -105,43 +120,52 @@
     <p class="code-text">Real world example of an Interface</p>
     <pre>
         <x-torchlight-code language='php'>
-            interface PaymentGateway {
+            interface PaymentGateway
+            {
                 public function connect(array $credentials): bool;
                 public function charge(float $amount, string $currency): bool;
                 public function refund(string $transactionId, float $amount): bool;
             }
 
 
-            class PayPalGateway implements PaymentGateway {
-                public function connect(array $credentials): bool {
+            class PayPalGateway implements PaymentGateway
+            {
+                public function connect(array $credentials): bool
+                {
                     echo "Connecting to PayPal with API key: " . $credentials['api_key'] . "\n";
                     return true; // Simulate success
                 }
 
-                public function charge(float $amount, string $currency): bool {
+                public function charge(float $amount, string $currency): bool
+                {
                     echo "Charging $amount $currency via PayPal.\n";
                     return true; // Simulate success
                 }
 
-                public function refund(string $transactionId, float $amount): bool {
+                public function refund(string $transactionId, float $amount): bool
+                {
                     echo "Refunding $amount for transaction $transactionId via PayPal.\n";
                     return true; // Simulate success
                 }
             }
 
 
-            class StripeGateway implements PaymentGateway {
-                public function connect(array $credentials): bool {
+            class StripeGateway implements PaymentGateway
+            {
+                public function connect(array $credentials): bool
+                {
                     echo "Connecting to Stripe with API key: " . $credentials['api_key'] . "\n";
                     return true; // Simulate success
                 }
 
-                public function charge(float $amount, string $currency): bool {
+                public function charge(float $amount, string $currency): bool
+                {
                     echo "Charging $amount $currency via Stripe.\n";
                     return true; // Simulate success
                 }
 
-                public function refund(string $transactionId, float $amount): bool {
+                public function refund(string $transactionId, float $amount): bool
+                {
                     echo "Refunding $amount for transaction $transactionId via Stripe.\n";
                     return true; // Simulate success
                 }

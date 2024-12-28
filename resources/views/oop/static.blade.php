@@ -28,10 +28,12 @@
     <p class="code-text">Example of static</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Example {
+            class Example
+            {
                 public static $counter = 0;
 
-                public static function incrementCounter() {
+                public static function incrementCounter()
+                {
                     self::$counter++;
                 }
             }
@@ -57,18 +59,23 @@
     <p class="code-text">Complex example</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Base {
-                public static function who() {
+            class Base
+            {
+                public static function who()
+                {
                     echo "Base class";
                 }
 
-                public static function test() {
+                public static function test()
+                {
                     self::who();  // [tl! focus]
                 }
             }
 
-            class Child extends Base {
-                public static function who() {
+            class Child extends Base
+            {
+                public static function who()
+                {
                     echo "Child class";
                 }
             }
@@ -78,18 +85,23 @@
 
 
             // Late stage binding  [tl! focus]
-            class Base {
-                public static function who() {
+            class Base
+            {
+                public static function who()
+                {
                     echo "Base class";
                 }
 
-                public static function test() {
+                public static function test()
+                {
                     static::who();  // [tl! focus]
                 }
             }
 
-            class Child extends Base {
-                public static function who() {
+            class Child extends Base
+            {
+                public static function who()
+                {
                     echo "Child class";
                 }
             }
@@ -103,10 +115,12 @@
     <pre>
         <x-torchlight-code language='php'>
             // Logger class
-            class Logger {
+            class Logger
+            {
                 private static $logFile = "app.log";
 
-                public static function log($message) {
+                public static function log($message)
+                {
                     $date = date('Y-m-d H:i:s');
                     $data = "[$date] $message\n";
                     file_put_contents(self::$logFile, $data, FILE_APPEND);
@@ -121,14 +135,17 @@
     <pre>
         <x-torchlight-code language='php'>
             // Config class
-            class Config {
+            class Config
+            {
                 private static $settings = [];
 
-                public static function set($key, $value) {
+                public static function set($key, $value)
+                {
                     self::$settings[$key] = $value;
                 }
 
-                public static function get($key) {
+                public static function get($key)
+                {
                     return self::$settings[$key] ?? null;
                 }
             }

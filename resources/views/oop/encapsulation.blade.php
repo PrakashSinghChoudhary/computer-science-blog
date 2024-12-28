@@ -9,15 +9,18 @@
     <p class="code-text">Example of Encapsulation</p>
     <pre>
         <x-torchlight-code language='php'>
-            class User {
+            class User
+            {
 
                 private $name;
 
-                public function getName() {
+                public function getName()
+                {
                     return $this->name;
                 }
 
-                public function setName($name) {
+                public function setName($name)
+                {
                     if ($name === '') {
                         throw new \Exception('Name cannot be empty');
                     }
@@ -32,17 +35,20 @@
     <p class="code-text">Another example of Encapsulation</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Movie {
+            class Movie
+            {
 
                 public $name;
                 public $releaseYear;
                 private $rating;
 
-                public function getRating() {
+                public function getRating()
+                {
                     return $this->rating;
                 }
 
-                public function setRating($rating) {
+                public function setRating($rating)
+                {
                     if ($rating < 0 || $rating > 5) {
                         throw new \Exception('Invalid rating. Please provide a value between 0 and 5.');
                     }

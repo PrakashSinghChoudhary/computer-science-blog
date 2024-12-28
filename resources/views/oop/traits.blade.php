@@ -19,24 +19,30 @@
     <p class="code-text">Example of a Trait</p>
     <pre>
         <x-torchlight-code language='php'>
-            trait Logger {
-                public function log($message) {
+            trait Logger
+            {
+                public function log($message)
+                {
                     echo "[LOG]: $message\n";
                 }
             }
 
-            class User {
+            class User
+            {
                 use Logger;
 
-                public function createUser($name) {
+                public function createUser($name)
+                {
                     $this->log("Creating user: $name");
                 }
             }
 
-            class Product {
+            class Product
+            {
                 use Logger;
 
-                public function createProduct($name) {
+                public function createProduct($name)
+                {
                     $this->log("Creating product: $name");
                 }
             }
@@ -53,19 +59,23 @@
     <p class="code-text">Trait with properties</p>
     <pre>
         <x-torchlight-code language='php'>
-            trait Counter {
+            trait Counter
+            {
                 private $count = 0;
 
-                public function increment() {
+                public function increment()
+                {
                     $this->count++;
                 }
 
-                public function getCount() {
+                public function getCount()
+                {
                     return $this->count;
                 }
             }
 
-            class ClickTracker {
+            class ClickTracker
+            {
                 use Counter;
             }
 
@@ -81,19 +91,24 @@
     <p class="code-text">Conflict Resolution</p>
     <pre>
         <x-torchlight-code language='php'>
-            trait TraitA {
-                public function sayHello() {
+            trait TraitA
+            {
+                public function sayHello()
+                {
                     echo "Hello from TraitA\n";
                 }
             }
 
-            trait TraitB {
-                public function sayHello() {
+            trait TraitB
+            {
+                public function sayHello()
+                {
                     echo "Hello from TraitB\n";
                 }
             }
 
-            class MyClass {
+            class MyClass
+            {
                 use TraitA, TraitB {
                     TraitA::sayHello insteadof TraitB;         // use TraitA
                     TraitB::sayHello as sayHelloFromTraitB;    // use TraitB
@@ -111,10 +126,12 @@
     <p class="code-text">Using Abstract Methods in Traits</p>
     <pre>
         <x-torchlight-code language='php'>
-            trait Authenticator {
+            trait Authenticator
+            {
                 abstract public function authenticate($credentials);
 
-                public function login($credentials) {
+                public function login($credentials)
+                {
                     if ($this->authenticate($credentials)) {
                         echo "Login successful!\n";
                     } else {
@@ -123,10 +140,12 @@
                 }
             }
 
-            class UserAuth {
+            class UserAuth
+            {
                 use Authenticator;
 
-                public function authenticate($credentials) {
+                public function authenticate($credentials)
+                {
                     return $credentials === "valid_password";
                 }
             }

@@ -11,34 +11,41 @@
     <p class="code-text">Example of a abstract class</p>
     <pre>
         <x-torchlight-code language='php'>
-            abstract class Shape {
+            abstract class Shape
+            {
 
                 public function __construct(protected $color) {}
 
                 abstract public function calculateArea();
                 abstract public function calculatePerimeter();
 
-                public function getColor() {
+                public function getColor()
+                {
                     return $this->color;
                 }
             }
 
-            class Circle extends Shape {
+            class Circle extends Shape
+            {
 
-                public function __construct($color, private $radius) {
+                public function __construct($color, private $radius)
+                {
                     parent::__construct($color);
                 }
 
-                public function calculateArea() {
+                public function calculateArea()
+                {
                     return pi() * pow($this->radius, 2);
                 }
 
-                public function calculatePerimeter() {
+                public function calculatePerimeter()
+                {
                     return 2 * pi() * $this->radius;
                 }
             }
 
-            class Rectangle extends Shape {
+            class Rectangle extends Shape
+            {
 
                 public function __construct(
                     $color,
@@ -48,11 +55,13 @@
                     parent::__construct($color);
                 }
 
-                public function calculateArea() {
+                public function calculateArea()
+                {
                     return $this->length * $this->width;
                 }
 
-                public function calculatePerimeter() {
+                public function calculatePerimeter()
+                {
                     return 2 * ($this->length + $this->width);
                 }
             }
@@ -69,7 +78,8 @@
     <p class="code-text">Real world example of abstract class</p>
     <pre>
         <x-torchlight-code language='php'>
-            abstract class DatabaseConnection {
+            abstract class DatabaseConnection
+            {
 
                 public function __construct(
                     protected $host,
@@ -82,20 +92,25 @@
                 abstract public function connect();
 
                 // Method for logging connection details
-                public function log($message) {
+                public function log($message)
+                {
                     echo "[LOG]: $message\n";
                 }
             }
 
-            class MySQLConnection extends DatabaseConnection {
-                public function connect() {
+            class MySQLConnection extends DatabaseConnection
+            {
+                public function connect()
+                {
                     $this->log("Connecting to MySQL Database: $this->database");
                     // MySQL connection logic here
                 }
             }
 
-            class PostgreSQLConnection extends DatabaseConnection {
-                public function connect() {
+            class PostgreSQLConnection extends DatabaseConnection
+            {
+                public function connect()
+                {
                     $this->log("Connecting to PostgreSQL Database: $this->database");
                     // PostgreSQL connection logic here
                 }

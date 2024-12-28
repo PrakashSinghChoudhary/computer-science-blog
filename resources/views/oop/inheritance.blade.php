@@ -13,7 +13,8 @@
     <p class="code-text">Basic example of Inheritance</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Book {
+            class Book
+            {
 
                 public function __construct(
                     private $title,
@@ -21,22 +22,26 @@
                     private $price
                 ) {}
 
-                public function getTitle() {
+                public function getTitle()
+                {
                     return $this->title;
                 }
 
-                public function getAuthor() {
+                public function getAuthor()
+                {
                     return $this->author;
                 }
 
-                public function getPrice() {
+                public function getPrice()
+                {
                     return $this->price;
                 }
 
             }
 
 
-            class DigitalBook extends Book {
+            class DigitalBook extends Book
+            {
 
                 public function __construct(
                     $title,
@@ -47,12 +52,14 @@
                     parent::__construct($title, $author, $price);
                 }
 
-                public function getFileSize() {
+                public function getFileSize()
+                {
                     return $this->fileSize;
                 }
             }
 
-            class PhysicalBook extends Book  {
+            class PhysicalBook extends Book
+            {
 
                 public function __construct(
                     $title,
@@ -63,7 +70,8 @@
                     parent::__construct($title, $author, $price);
                 }
 
-                public function getWeight() {
+                public function getWeight()
+                {
                     return $this->weight;
                 }
             }
@@ -77,20 +85,26 @@
     <p class="code-text">Basic example of method overriding</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Animal {
-                public function speak() {
+            class Animal
+            {
+                public function speak()
+                {
                     return 'Animal makes noise';
                 }
             }
 
-            class Dog extends Animal {
-                public function speak() {
+            class Dog extends Animal
+            {
+                public function speak()
+                {
                     return 'Woof';
                 }
             }
 
-            class Cat extends Animal {
-                public function speak() {
+            class Cat extends Animal
+            {
+                public function speak()
+                {
                     return 'Meow';
                 }
             }
@@ -106,22 +120,28 @@
     <p class="code-text">Nested example of method overriding</p>
     <pre>
         <x-torchlight-code language='php'>
-            class Grandpa {
-                public function whoAmI() {
+            class Grandpa
+            {
+                public function whoAmI()
+                {
                     return 'Grandpa';
                 }
             }
 
-            class Papa extends Grandpa {
-            //    public function whoAmI() {
-            //        return 'Papa';
-            //    }
+            class Papa extends Grandpa
+            {
+                //    public function whoAmI()
+                //    {
+                //        return 'Papa';
+                //    }
             }
 
-            class Child extends Papa {
-            //    public function whoAmI() {
-            //        return 'Child';
-            //    }
+            class Child extends Papa
+            {
+                //    public function whoAmI()
+                //    {
+                //        return 'Child';
+                //    }
             }
 
             $child = new Child();
@@ -132,15 +152,19 @@
     <p class="content">Using the <span class="tick">#[Override]</span> attribute</p>
     <pre>
         <x-torchlight-code language='php'>
-        abstract class Parent {
-            public function methodWithDefaultImplementation(): int {
+        abstract class Parent
+        {
+            public function methodWithDefaultImplementation(): int
+            {
                 return 1;
             }
         }
 
-        final class Child extends Parent {
+        final class Child extends Parent
+        {
             #[Override]
-            public function methodWithDefaultImplementation(): int {
+            public function methodWithDefaultImplementation(): int
+            {
                 return 2; // The overridden method
             }
         }
