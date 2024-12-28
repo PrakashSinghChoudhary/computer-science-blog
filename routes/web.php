@@ -33,3 +33,17 @@ Route::prefix('php')->group(function () {
     Route::get('/', function () { return view('php.index'); });
     Route::get('/type-hinting', function () { return view('php.type-hinting'); });
 });
+
+
+// React
+Route::prefix('react')->group(function () {
+    Route::get('/', function () { return view('react.index'); });
+    Route::get('/introduction', function () { return view('react.introduction'); });
+});
+
+
+// Golang
+Route::prefix('golang')->group(function () {
+    Route::get('/', function () { return view('golang.index'); });
+    Route::get('/introduction', function () { return view('golang.introduction'); });
+});

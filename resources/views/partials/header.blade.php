@@ -4,6 +4,8 @@
         <li><a class="link" href="/php">PHP</a></li>
         <li><a class="link" href="/object-oriented-programming">OOP</a></li>
         <li><a class="link" href="/design-patterns">Design Patterns</a></li>
+        <li><a class="link" href="/react">React</a></li>
+        <li><a class="link" href="/golang">Golang</a></li>
     </ul>
 
 
