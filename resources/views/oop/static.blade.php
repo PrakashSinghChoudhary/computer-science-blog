@@ -84,7 +84,7 @@
             Child::who();       // "Child class" [tl! focus]
 
 
-            // Late stage binding  [tl! focus]
+            // Late static binding  [tl! focus]
             class Base
             {
                 public static function who()
