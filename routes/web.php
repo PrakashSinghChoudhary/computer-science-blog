@@ -39,11 +39,13 @@ Route::prefix('php')->group(function () {
 Route::prefix('react')->group(function () {
     Route::get('/', function () { return view('react.index'); });
     Route::get('/introduction', function () { return view('react.introduction'); });
+    Route::get('/create-element', function () { return view('react.createElement'); });
 });
 
 
 // Golang
 Route::prefix('golang')->group(function () {
     Route::get('/', function () { return view('golang.index'); });
+    Route::get('/introduction', function () { return view('golang.introduction'); });
     Route::get('/introduction', function () { return view('golang.introduction'); });
 });
