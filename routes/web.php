@@ -47,5 +47,5 @@ Route::prefix('react')->group(function () {
 Route::prefix('golang')->group(function () {
     Route::get('/', function () { return view('golang.index'); });
     Route::get('/introduction', function () { return view('golang.introduction'); });
-    Route::get('/introduction', function () { return view('golang.introduction'); });
+    Route::get('/key-component', function () { return view('golang.key-component'); });
 });
