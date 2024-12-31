@@ -5,5 +5,6 @@
     <ul class="list-disc list-inside space-y-2">
         <li><a class="link" href="/golang/introduction">Introduction</a></li>
         <li><a class="link" href="/golang/key-component">Key Component of Go program</a></li>
+        <li><a class="link" href="/golang/variables-and-data-types">Variables</a></li>
     </ul>
 @stop
