@@ -17,6 +17,7 @@
         <li><a class="link" href="/object-oriented-programming/exceptions">Exceptions</a></li>
         <li><a class="link" href="/object-oriented-programming/magic-methods">Magic Methods</a></li>
         <li><a class="link" href="/object-oriented-programming/namespaces">Namespaces</a></li>
+        <li><a class="link" href="/object-oriented-programming/autoloading">Autoloading</a></li>
 
     </ul>
 @stop

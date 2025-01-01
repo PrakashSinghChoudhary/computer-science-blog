@@ -25,6 +25,7 @@ Route::prefix('object-oriented-programming')->group(function () {
     Route::get('/exceptions', function () { return view('oop.exceptions'); });
     Route::get('/magic-methods', function () { return view('oop.magic'); });
     Route::get('/namespaces', function () { return view('oop.namespaces'); });
+    Route::get('/autoloading', function () { return view('oop.autoloading'); });
 });
 
 
